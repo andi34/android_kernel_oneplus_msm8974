@@ -69,3 +69,7 @@
 		qcom,ibatmax-cool-ma = <900>;
 	};
 };
+
+&pm8941_chg_boost {
+	status = "ok";
+};
