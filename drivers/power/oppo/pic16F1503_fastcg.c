@@ -20,7 +20,7 @@ static struct task_struct *pic16f_fw_update_task = NULL;
 #define ERASE_COUNT   		96	//0x200-0x7FF
 #define READ_COUNT			95	//192
 
-#else	//FIND7OP or other pic1508 
+#else	//MSM8974_14001 or other pic1508 
 #define ERASE_COUNT   		224	//0x200-0xFFF
 #define READ_COUNT			223	//448
 #endif

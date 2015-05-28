@@ -375,7 +375,7 @@ static struct gpiomux_setting hsic_act_cfg = {
 	.pull = GPIOMUX_PULL_NONE,
 };
 
-#ifndef CONFIG_MACH_FIND7OP
+#ifndef CONFIG_MACH_MSM8974_14001
 static struct gpiomux_setting hsic_hub_act_cfg = {
 	.func = GPIOMUX_FUNC_GPIO,
 	.drv = GPIOMUX_DRV_2MA,
@@ -421,7 +421,7 @@ static struct msm_gpiomux_config msm_hsic_configs[] = {
 	},
 };
 
-#ifndef CONFIG_MACH_FIND7OP
+#ifndef CONFIG_MACH_MSM8974_14001
 static struct msm_gpiomux_config msm_hsic_hub_configs[] = {
 	{
 		.gpio = 50,               /* HSIC_HUB_INT_N */
@@ -623,7 +623,7 @@ static struct msm_gpiomux_config msm_epm_configs[] __initdata = {
 	},
 };
 
-#ifdef CONFIG_MACH_FIND7OP
+#ifdef CONFIG_MACH_MSM8974_14001
 static struct gpiomux_setting gpio_blsp6_spi3_config = {
 	.func = GPIOMUX_FUNC_2,
 	.drv = GPIOMUX_DRV_8MA,
@@ -755,7 +755,7 @@ static struct msm_gpiomux_config msm_blsp_configs[] __initdata = {
 			[GPIOMUX_SUSPENDED] = &gpio_i2c_config,
 		},
 	},
-#ifdef CONFIG_MACH_FIND7OP
+#ifdef CONFIG_MACH_MSM8974_14001
 	{                           /* NFC */
 		.gpio      = 49,		/* BLSP1 QUP5 (BLSP6) MOSI */
 		.settings = {
@@ -1352,7 +1352,7 @@ static struct msm_gpiomux_config wcnss_5gpio_interface[] = {
 };
 
 static struct msm_gpiomux_config ath_gpio_configs[] = {
-#ifndef CONFIG_MACH_FIND7OP
+#ifndef CONFIG_MACH_MSM8974_14001
 	{
 		.gpio = 51,
 		.settings = {
@@ -1614,7 +1614,7 @@ void __init msm_8974_init_gpiomux(void)
 	msm_gpiomux_install(msm_taiko_config, ARRAY_SIZE(msm_taiko_config));
 
 	msm_gpiomux_install(msm_hsic_configs, ARRAY_SIZE(msm_hsic_configs));
-#ifndef CONFIG_MACH_FIND7OP
+#ifndef CONFIG_MACH_MSM8974_14001
 	msm_gpiomux_install(msm_hsic_hub_configs,
 				ARRAY_SIZE(msm_hsic_hub_configs));
 #endif
