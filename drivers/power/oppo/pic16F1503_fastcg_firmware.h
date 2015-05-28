@@ -103,7 +103,7 @@ unsigned char Pic16F_firmware_data[] = {
 
 };
 
-#else 		//FIND7OP:pic1508
+#else 		//MSM8974_14001:pic1508
 
 unsigned char Pic16F_firmware_data[] = {
 

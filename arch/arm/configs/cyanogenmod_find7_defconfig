@@ -377,7 +377,7 @@ CONFIG_MACH_OPPO_MSM8974=y
 # Oppo board selection
 #
 CONFIG_MACH_FIND7=y
-# CONFIG_MACH_FIND7OP is not set
+# CONFIG_MACH_MSM8974_14001 is not set
 
 #
 # Oppo specific options

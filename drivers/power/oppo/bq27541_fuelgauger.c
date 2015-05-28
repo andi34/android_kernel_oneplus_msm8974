@@ -928,7 +928,7 @@ static struct platform_device this_device = {
 
 static bool bq27541_authenticate(struct i2c_client *client)
 {
-#ifdef CONFIG_MACH_FIND7OP
+#ifdef CONFIG_MACH_MSM8974_14001
 	return true;
 #else
 	char recv_buf[MESSAGE_LEN]={0x0};
@@ -987,7 +987,7 @@ static bool bq27541_authenticate(struct i2c_client *client)
 #define BATTERY_3000MA		1
 #define TYPE_INFO_LEN		8
 
-#ifndef CONFIG_MACH_FIND7OP
+#ifndef CONFIG_MACH_MSM8974_14001
 /* jingchun.wang@Onlinerd.Driver, 2014/03/10  Modify for 14001 */
 static int bq27541_batt_type_detect(struct i2c_client *client)
 {
@@ -1015,12 +1015,12 @@ static int bq27541_batt_type_detect(struct i2c_client *client)
 	pr_info("%s battery_type:%d\n",__func__,rc);
 	return rc;
 }
-#else /*CONFIG_MACH_FIND7OP*/
+#else /*CONFIG_MACH_MSM8974_14001*/
 static int bq27541_batt_type_detect(struct i2c_client *client)
 {
 	return BATTERY_3000MA;
 }
-#endif /*CONFIG_MACH_FIND7OP*/
+#endif /*CONFIG_MACH_MSM8974_14001*/
 #endif
 
 /* OPPO 2013-12-12 liaofuchun add for fastchg */

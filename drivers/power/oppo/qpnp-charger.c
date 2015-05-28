@@ -5819,7 +5819,7 @@ static int soft_aicl(struct qpnp_chg_chip *chip)
 	for(i = 0; i < MAX_COUNT; i++) {
 		chg_vol = get_prop_charger_voltage_now(chip);
 		if(chg_vol < SOFT_AICL_VOL) {
-#ifdef CONFIG_MACH_FIND7OP
+#ifdef CONFIG_MACH_MSM8974_14001
 			qpnp_chg_iusbmax_set(chip, 1200);
 #else
 			qpnp_chg_iusbmax_set(chip, 1500);
@@ -5829,7 +5829,7 @@ static int soft_aicl(struct qpnp_chg_chip *chip)
 			return 0;
 		}
 	}
-#ifdef CONFIG_MACH_FIND7OP
+#ifdef CONFIG_MACH_MSM8974_14001
 	qpnp_chg_iusbmax_set(chip, 1200);
 #else
 	qpnp_chg_iusbmax_set(chip, 1500);
@@ -5906,7 +5906,7 @@ static int qpnp_start_charging(struct qpnp_chg_chip *chip)
 				soft_aicl(chip);
 			} else {
 				if (chip->aicl_current == 1500) {
-#ifdef CONFIG_MACH_FIND7OP
+#ifdef CONFIG_MACH_MSM8974_14001
 					qpnp_chg_iusbmax_set(chip, 1200);
 #else
 					qpnp_chg_iusbmax_set(chip, 1500);
@@ -6187,7 +6187,7 @@ static int handle_batt_temp_normal(struct qpnp_chg_chip *chip)
 					soft_aicl(chip);
 				} else {
 					if(chip->aicl_current == 1500) {
-#ifdef CONFIG_MACH_FIND7OP
+#ifdef CONFIG_MACH_MSM8974_14001
 						qpnp_chg_iusbmax_set(chip, 1200);
 #else
 						qpnp_chg_iusbmax_set(chip, 1500);
@@ -6607,7 +6607,7 @@ bool is_alow_fast_chg(struct qpnp_chg_chip *chip)
 		return false;
 	if(chg_type != POWER_SUPPLY_TYPE_USB_DCP)
 		return false;
-#ifndef CONFIG_MACH_FIND7OP
+#ifndef CONFIG_MACH_MSM8974_14001
 	if(temp < 105)
 		return false;
 	if((temp < 155) && (low_temp_full == 1)){
@@ -6881,7 +6881,7 @@ static int fb_notifier_callback(struct notifier_block *self,
 								if (chip->usbin_counts == USBIN_COUNT_FLAG && !qpnp_get_fast_chg_ing(chip))
 									qpnp_chg_iusbmax_set(chip, 900);
 							} else {
-#ifdef CONFIG_MACH_FIND7OP
+#ifdef CONFIG_MACH_MSM8974_14001
 /* OPPO 2014-06-03 sjc Modify for Find7op temp rising problem */
 								qpnp_chg_iusbmax_set(chip, 1200);
 #else

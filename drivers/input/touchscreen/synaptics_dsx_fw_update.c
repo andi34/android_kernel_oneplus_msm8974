@@ -27,7 +27,7 @@
 #include "synaptics_dsx.h"
 #include "synaptics_dsx_i2c.h"
 #include "synaptics_firmware_youngfast.h"
-#ifdef CONFIG_MACH_FIND7OP  //for 14001's wintek tp
+#ifdef CONFIG_MACH_MSM8974_14001  //for 14001's wintek tp
 #include "synaptics_firmware_tpk_jdi_14001.h"
 #include "synaptics_firmware_tpk_sharp_14001.h"
 #include "synaptics_firmware_tpk_truly_14001.h"
@@ -1446,7 +1446,7 @@ int synaptics_rmi4_get_firmware_version(int vendor, int lcd_type) {
 	if (vendor == TP_VENDOR_YOUNGFAST) {
 		return FIRMWARE_YOUNGFAST_VERSION;
 	} else if (vendor == TP_VENDOR_TPK) {
-#ifndef CONFIG_MACH_FIND7OP
+#ifndef CONFIG_MACH_MSM8974_14001
 		if (get_pcb_version() >= HW_VERSION__20)
 			return FIRMWARE_TPK_FIND7S_VERSION;
 		else
@@ -1564,7 +1564,7 @@ static unsigned char* fwu_rmi4_get_firmware_data(void) {
 	else if (vendor_id == TP_VENDOR_YOUNGFAST)
 		firmwaredata = (unsigned char*)Syna_Firmware_Data_youngfast;
 	else if (vendor_id == TP_VENDOR_TPK) {
-#ifndef CONFIG_MACH_FIND7OP
+#ifndef CONFIG_MACH_MSM8974_14001
 		if (get_pcb_version() >= HW_VERSION__20)
 			firmwaredata = (unsigned char*)Syna_Firmware_Data_tpk_find7s;
 		else

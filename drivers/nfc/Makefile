@@ -3,7 +3,7 @@
 #
 
 obj-$(CONFIG_PN544_NFC)		+= pn544.o
-ifeq ($(CONFIG_MACH_FIND7OP),y)
+ifeq ($(CONFIG_MACH_MSM8974_14001),y)
 obj-$(CONFIG_PN544_NFC_OPPO)	+= pn544-oppo_find7op.o
 else
 obj-$(CONFIG_PN544_NFC_OPPO)	+= pn544-oppo.o

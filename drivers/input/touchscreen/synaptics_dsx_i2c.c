@@ -36,7 +36,7 @@
 
 #include "synaptics_dsx.h"
 #include "synaptics_dsx_i2c.h"
-#ifdef CONFIG_MACH_FIND7OP  //for 14001's  tp
+#ifdef CONFIG_MACH_MSM8974_14001  //for 14001's  tp
 #include "synaptics_test_rawdata_14001.h"
 #else
 #include "synaptics_test_rawdata.h"
@@ -2295,7 +2295,7 @@ static int synaptics_init_gpio(struct synaptics_rmi4_data *ts)
 		{ts->reset_gpio, GPIO_CFG(ts->reset_gpio, 0, GPIO_CFG_OUTPUT, GPIO_CFG_NO_PULL, GPIO_CFG_2MA), "synaptics_reset_gpio"},
 		{ts->wakeup_gpio, GPIO_CFG(ts->wakeup_gpio, 0, GPIO_CFG_INPUT, GPIO_CFG_PULL_UP, GPIO_CFG_2MA), "synaptics_wakeup_gpio"},
 		{ts->id_gpio, GPIO_CFG(ts->id_gpio, 0, GPIO_CFG_INPUT, GPIO_CFG_PULL_UP, GPIO_CFG_2MA), "synaptics_id_gpio"},
-#ifndef CONFIG_MACH_FIND7OP
+#ifndef CONFIG_MACH_MSM8974_14001
 		{ts->id3_gpio, GPIO_CFG(ts->id3_gpio, 0, GPIO_CFG_INPUT, GPIO_CFG_PULL_UP, GPIO_CFG_2MA), "synaptics_id3_gpio"},
 #endif
 	};
@@ -2320,7 +2320,7 @@ static int synaptics_parse_dt(struct device *dev, struct synaptics_rmi4_data *ts
 		ts->reset_gpio  = of_get_named_gpio(np, "synaptics,reset-gpio", 0);
 		ts->wakeup_gpio = of_get_named_gpio(np, "synaptics,wakeup-gpio", 0);  //gpio 57
 		ts->id_gpio     = of_get_named_gpio(np, "synaptics,id-gpio", 0);  //gpio 62
-#ifndef CONFIG_MACH_FIND7OP
+#ifndef CONFIG_MACH_MSM8974_14001
 		ts->id3_gpio    = of_get_named_gpio(np, "synaptics,id3-gpio", 0);  //gpio 46
 #endif
 		ret = 0;
@@ -4271,7 +4271,7 @@ __setup("mdss_mdp.panel=", lcd_type_id_setup);
 static void synaptics_rmi4_get_vendorid(struct synaptics_rmi4_data *rmi4_data) {
 	int vendor_id = 0;
 
-#ifdef CONFIG_MACH_FIND7OP
+#ifdef CONFIG_MACH_MSM8974_14001
 	vendor_id = synaptics_rmi4_get_vendorid1(gpio_get_value(rmi4_data->id_gpio),
 			gpio_get_value(rmi4_data->wakeup_gpio), 0);
 #else
