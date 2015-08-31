@@ -52,7 +52,7 @@ endif
         dtb-$(CONFIG_ARCH_MSM8974)	+= msm8974pro-ac-pm8941-x9076.dtb
         endif
         ifeq ($(CONFIG_MACH_MSM8974_14001),y)
-        dtb-$(CONFIG_ARCH_MSM8974)	+= msm8974pro-ac-pm8941-a0001.dtb
+        dtb-$(CONFIG_ARCH_MSM8974)	+= msm8974pro-ac-pm8941-14001.dtb
         endif
         ifneq ($(CONFIG_MACH_OPPO),y)
         dtb-$(CONFIG_ARCH_MSM8974)	+= msm8974-v1-cdp.dtb

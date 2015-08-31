@@ -10,19 +10,25 @@
  * GNU General Public License for more details.
  */
 
-/include/ "msm8974-oppo-common.dtsi"
-/include/ "msm8974-oppo-camera.dtsi"
-/include/ "msm8974-oppo-input.dtsi"
-/include/ "msm8974-oppo-usb.dtsi"
-/include/ "msm8974-oppo-misc.dtsi"
-/include/ "msm8974-oppo-pm.dtsi"
-/include/ "msm8974-oppo-nfc.dtsi"
-/include/ "msm8974-oppo-regulator.dtsi"
+/include/ "msm8974-14001-common.dtsi"
+/include/ "msm8974-14001-camera.dtsi"
+/include/ "msm8974-14001-input.dtsi"
+/include/ "msm8974-14001-usb.dtsi"
+/include/ "msm8974-14001-misc.dtsi"
+/include/ "msm8974-14001-pm.dtsi"
+/include/ "msm8974-14001-nfc.dtsi"
+/include/ "msm8974-14001-regulator.dtsi"
 /include/ "msm8974-oppo-sound.dtsi"
-/include/ "msm8974-a0001-sound.dtsi"
-/include/ "msm8974-oppo-leds.dtsi"
+/include/ "msm8974-14001-leds.dtsi"
 
 &soc {
+	i2c@f9923000 {
+		pic16f_fastcg@25 {
+			status = "okay";
+			compatible = "microchip,pic16f_fastcg";
+			reg = <0x25>;
+		};
+	};
 	i2c@f9924000 {
 		sn3193_issi_rgb@68 {
 			compatible = "sn3193,issi-rgb";
@@ -38,13 +44,4 @@
 
 &spi_0 {
 	status = "disabled";
-};
-
-&spi_7 {
-	status = "disabled";
-};
-
-&pm8941_boost {
-	regulator-min-microvolt = <4500000>;
-	regulator-max-microvolt = <4500000>;
 };
