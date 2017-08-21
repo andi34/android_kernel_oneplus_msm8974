@@ -13,22 +13,9 @@
 /include/ "../../msm8974-leds.dtsi"
 
 &pm8941_lsid1 {
+
 	qcom,leds@d000 {
 		status = "disabled";
-	};
-
-	qcom,leds@d300 {
-		qcom,flash_0 {
-			qcom,current = <220>;
-		};
-
-		qcom,flash_1 {
-			qcom,current = <220>;
-		};
-
-		qcom,flash_torch {
-			qcom,current = <130>;
-		};
 	};
 
 	qcom,leds@d800 {
