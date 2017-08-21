@@ -48,41 +48,6 @@
 		status = "disabled";
 	};
 
-	gpio_keys {
-		compatible = "gpio-keys";
-		input-name = "gpio-keys";
-		status = "ok";
-
-		vol_up {
-			label = "volume_up";
-			gpios = <&pm8941_gpios 5 0x1>;
-			linux,input-type = <1>;
-			linux,code = <115>;
-			gpio-key,wakeup;
-			debounce-interval = <15>;
-		};
-
-		vol_down {
-			label = "volume_down";
-			gpios = <&pm8941_gpios 2 0x1>;
-			linux,input-type = <1>;
-			linux,code = <114>;
-			gpio-key,wakeup;
-			debounce-interval = <15>;
-		};
-
-		hallsensor_key {
-			label = "hallsensor_key";
-			gpios = <&msmgpio 68 1>;
-			interrupt-parent = <&msmgpio>;
-			interrupts = <68 0x0>;
-			linux,input-type = <5>;
-			linux,code = <0>;
-			gpio-key,wakeup;
-			debounce-interval = <150>;
-		};
-	};
-
 	sound {
 		qcom,model = "msm8974-taiko-mtp-snd-card";
 		qcom,cdc-micbias2-headset-only;
