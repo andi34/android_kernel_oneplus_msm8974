@@ -63,17 +63,17 @@
 			linux,name = "button-backlight";
 			qcom,max-current = <15>;
 		};
-	};
 
-	qcom,kpdbl2 {
-		status = "disabled";
-	};
+		qcom,kpdbl2 {
+			status = "disabled";
+		};
 
-	qcom,kpdbl3 {
-		status = "disabled";
-	};
+		qcom,kpdbl3 {
+			status = "disabled";
+		};
 
-	qcom,kpdbl4 {
-		status = "disabled";
+		qcom,kpdbl4 {
+			status = "disabled";
+		};
 	};
 };
