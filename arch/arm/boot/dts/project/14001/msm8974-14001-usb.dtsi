@@ -10,6 +10,11 @@
  * GNU General Public License for more details.
  */
 
+&usb3 {
+	qcom,otg-capability;
+};
+
 &usb_otg {
+	qcom,hsusb-otg-otg-control = <2>;
 	qcom,hsusb-otg-phy-init-seq = <0x44 0x80 0x3F 0x81 0x4D 0x82 0x13 0x83 0xffffffff>;
 };
